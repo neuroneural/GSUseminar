@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/> -->
+
+  <script src="lib/colorbrewer.v1.min.js" charset="utf-8"></script>
+  <script src="lib/colorStringStandalone.js" charset="utf-8"></script>
+  <script type="text/javascript" src="lib/jquery-2.2.4.min.js"></script>
+
+  <title>CS Seminar</title>
+
+  <meta name="description" content="CS GSU Seminar">
+  <meta name="author" content="Sergey M Plis">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+  <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="dist/theme/aml.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.scss';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+
+<body>
+  <div class="reveal">
+    <!-- In between the <div="reveal"> and the <div class="slides">-->
+    <!-- <header style="position: absolute; top: 10px; left: 100px; z-index: 500; font-size:100px;background-color: rgba(0,0,0,0); text-align: center !important"></header>  -->
+    <!-- In between the <div="reveal"> and the <div class="slides">-->
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <section>
+        <section>
+          <p>
+          <h2>Machine Learning & Brain Imaging</h2>
+          <h3>selected projects</h3>
+          <p>
+            Sergey Plis, PhD
+          <p><small>
+              Professor, CS GSU
+            </small>
+          <p>
+          <p>
+          <p>
+          <p>
+        </section>
+
+      </section>
+
+      <section>
+        <section>
+          <h1>Administration</h1>
+        </section>
+
+        <section data-vertical-align-top data-background-iframe="figures/syllabus_seminar.pdf">
+          <h2>Syllabus</h2>
+        </section>
+        <section data-background="figures/seminar_assignments.png" data-background-size="contain">
+          <h1>Assignments</h1>
+        </section>
+
+        <section
+          data-background-iframe="https://ursa.research.gsu.edu/research-training-resources/#research-administration">
+          <h1><a href="https://ursa.research.gsu.edu/research-training-resources/#research-administration">Training Page
+              GSU</a></h1>
+        </section>
+
+        <section data-background="figures/my_citi_certificate.png" data-background-size="contain">
+        </section>
+
+        <section data-background="figures/cats_attendance.png" data-vertical-align-top data-background-size="cover">
+          <h1 style="text-shadow: 4px 4px 4px #002b36; color: #93a1a1">Attendance</h1>
+        </section>
+
+        <section data-background="figures/keeper_of_the_key.png" data-vertical-align-top data-background-size="cover">
+          <h1 style="text-shadow: 4px 4px 4px #002b36; color: #f3fafa">Key Keeper</h1>
+        </section>
+
+      </section>
+
+
+
+      <section>
+        <section data-state="brightside">
+          <h2>What motivates our work</h2>
+        </section>
+
+        <section data-vertical-align-top data-state="darkside"
+          data-background-iframe="https://www.youtube.com/embed/Mk11oo8CQCQ?autoplay=1&controls=0&rel=0&modestbranding=1&showinfo=0&loop=1&iv_load_policy=3&playlist=Mk11oo8CQCQ">
+          <h4 style="text-shadow: 4px 4px 4px #002b36; color: #93a1a1">Learn from data how the brain works and breaks
+          </h4>
+        </section>
+
+        <section data-state="darkside" data-vertical-align-top data-background-size="cover"
+          data-background="figures/brains_tiled.png">
+          <h4 style="text-shadow: 4px 4px 4px #002b36; color: #93a1a1">The field's solution is to collect more data</h4>
+          <div class="fragment zoom-in" data-fragment-index="1">
+            <img class="stretch" style="border:0; box-shadow: 0px 0px 0px
+                                          rgba(150, 150, 255,
+                                          0.8);" width="60%" src="figures/overload.jpg" alt="loop">
+            <h4 style="text-shadow: 4px 4px 4px #002b36; color: #f1d5c8">
+              <alert style="color: #ec5b73;">Problem:</alert> large high dimensional data is not easy to understand
+            </h4>
+          </div>
+        </section>
+
+        <section data-state="brightside">
+          <h3>Desired Solution</h3>
+          <img class="stretch" style="border:0; box-shadow: 0px 0px 0px
+                                        rgba(150, 150, 255, 0.8); margin-top:-20pt; width:100%;" width="80%"
+            src="figures/curious_robot_knowledge_extractor3.png" alt="loop"><br>
+          <h3>
+            automatically extract meaning from data
+          </h3>
+          <div class="slide-footer" style="font-size:9pt;">
+            The image is generated by midjourney
+          </div>
+        </section>
+
+        <section data-state="brightside">
+          <h2>Semantic Segmentation</h2>
+        </section>
+
+        <section>
+          <img class="stretch" style="border:0; box-shadow: 0px 0px 0px
+                                        rgba(150, 150, 255, 0.8);" width="250" src="figures/tasks.png" alt="david">
+        </section>
+
+        <section data-background-video="figures/brainchopV1_3.mp4">
+        </section>
+
+        <section data-state="brightside">
+          <h2>Model Interpretability</h2>
+        </section>
+
+        <section data-state="darkside">
+          <h3>brain is highly dynamic</h3>
+          <img style="border:0; box-shadow: 0px 0px 0px
+			rgba(150, 150, 255, 0.8);" width="250" class="stretch" src="figures/dynamic_brain.gif" alt="latent">
+        </section>
+
+        <section data-vertical-align-top data-state="brightside">
+          <h3>To Understand, Learn to Predict</h3>
+          <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);" width="100%"
+            src="figures/learning_from_models.svg" alt="Learning to predict">
+          <row class="fragment roll-in" data-fragment-index="0" style="margin-top:-30pt;">
+            <col50>
+              <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);" width="100%"
+                src="figures/ica-components-subset.png" alt="Learning to predict">
+            </col50>
+            <col50>
+              <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);" width="100%"
+                src="figures/ICA_TC_example.svg" alt="Learning to predict">
+            </col50>
+          </row>
+          <div class="slide-footer" style="font-size:9pt; margin-bottom:-20pt;">
+            <ol>
+              <li> Vellido, A. The importance of interpretability and visualization in machine learning for applications
+                in medicine and health care. Neural computing applications 1–15 (2019).
+              <li> Singh, A., Sengupta, S. & Lakshminarayanan, V. Explainable deep learning models in medical image
+                analysis. J. Imaging 6, 52 (2020).
+              <li> Samek, W., Montavon, G., Lapuschkin, S., Anders, C. J. & Müller, K.-R. Toward interpretable machine
+                learning: Transparent deep neural networks and beyond. arXiv preprint arXiv:2003.07631 (2020).
+            </ol>
+          </div>
+        </section>
+
+        <section>
+          <h3>Two types of eXplainable AI</h3>
+          <row>
+            <col50>
+              <h4>Explain the data</h4>
+              <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);" width="100%"
+                src="figures/explanation_examples.svg" alt="task">
+            </col50>
+            <col50>
+              <h4>Interpret the model</h4>
+              <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);" width="100%"
+                src="figures/PCA_spring.gif" alt="task">
+            </col50>
+          </row>
+          <div class="slide-footer" style="font-size:8pt;">
+            "Geometrically Guided Saliency Maps" Md Mahfuzur Rahman, Noah Lewis, Sergey Plis ICLR 2022 Workshop
+            PAIR2Struct
+          </div>
+        </section>
+
+        <section>
+          <h3>Graph as a glass-box layer</h3>
+          <ul style="list-style-type: none; font-size: 19pt">
+            <li class="fragment roll-in"> To see through a black box model we need a window
+              <div align="center">
+                <img class="stretch"
+                  style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);position: relative; margin:0 auto;"
+                  width="50%" src="figures/glass_box_into_mouse.png" alt="windowed">
+              </div>
+            <li class="fragment roll-in"> Our window is a graph, but we want the model to use it too
+              <div align="center">
+                <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);" width="50%"
+                  src="figures/glass_box_layer.svg" alt="windowed">
+              </div>
+            <li class="fragment roll-in"> For that, the graph needs to be differentiable
+              \[
+              \mbox{softmax}(\bm{H}\bm{W}_Q\bm{W}_K\bm{H}^T), \bm{H}\mbox{ is (brain regions)} \times d
+              \]
+            <li class="fragment roll-in">
+              <blockquote style="background-color: #eee8d5; width: 100%; font-size: 32px; text-align: left;">
+                The now familiar <alert>alignment matrix</alert> from the self-attention module
+              </blockquote>
+          </ul>
+        </section>
+
+        <section>
+          <h3>assembling a decen(n)t model</h3>
+          <row style="margin-top: -30px;">
+            <col50>
+              <ul style="list-style-type: none; font-size: 19pt">
+                <li class="fragment roll-in">
+                  <img class="stretch" style="border:0; box-shadow: 0px 0px 0px
+                                                 rgba(150, 150, 255,
+                                                 0.8);" width="80%" src="figures/bilstm_simple.png" alt="DECENNT">
+                <li class="fragment roll-in">
+                  <img class="stretch" style="border:0; box-shadow: 0px 0px 0px
+                                                 rgba(150, 150, 255,
+                                                 0.8);" width="80%" src="figures/attention_distill.png" alt="DECENNT">
+              </ul>
+            </col50>
+            <col50>
+              <img class="stretch" style="border:0; box-shadow: 0px 0px 0px
+                                            rgba(150, 150, 255,
+                                            0.8);" width="80%" src="figures/Decennt.svg" alt="DECENNT">
+            </col50>
+          </row>
+        </section>
+
+        <section>
+          <h3>Results: Interpretable glass-box layer <alert>for brains</alert>
+          </h3>
+          <row style="margin-top: -30px;">
+            <div align="center">
+              <img class="stretch" style="border:0; box-shadow: 0px 0px 0px                                          rgba(150, 150, 255,
+                                          0.8);" width="80%" src="figures/taskENC.svg" alt="task">
+            </div>
+          </row>
+          <row style="margin-top: -30px;">
+            <div align="center">
+              <img class="stretch" style="border:0; box-shadow: 0px 0px 0px
+                                          rgba(150, 150, 255,
+                                          0.8);" width="70%" src="figures/FBIRNConnect.svg" alt="task">
+            </div>
+          </row>
+          <row>
+            <col50>
+            </col50>
+            <col50>
+            </col50>
+          </row>
+
+        </section>
+
+        <section>
+          <h3>Results: temporal attention captures dynamics</h3>
+          <row>
+            <col60>
+              <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);" width="100%"
+                src="figures/Melspectrogram.svg" alt="task">
+              <row style="font-size:22pt;">
+                <col30>
+                  cat:
+                </col30>
+                <col>
+                <audio controls>
+                  <source src="figures/cat_on_bg.wav" type="audio/x-wav">
+                </audio>
+                </col>
+              </row>
+              <row style="font-size:22pt;">
+                <col30>
+                  cat:
+                </col30>
+                <col>
+                <audio controls>
+                  <source src="figures/cat_on_bg2.wav" type="audio/x-wav">
+                </audio>
+                </col>
+              </row>
+              <row style="font-size:22pt;">
+                <col30>
+                  nine:
+                </col30>
+                <col>
+                <audio controls>
+                  <source src="figures/nine_on_bg.wav" type="audio/x-wav">
+                </audio>
+                </col>
+              </row>
+            </col60>
+            <col40>
+              <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);" width="75%"
+                src="figures/AverageAttentionWeightsNormalized.svg" alt="task">
+            </col40>
+          </row>
+        </section>
+
+        <section data-vertical-align-top>
+          <div id="header-right" style="margin-right: -10px; margin-top: -20px">
+            <img src="figures/Zafar_mug.svg" alt="Zafar Iqbal"
+              style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 1); margin-bottom: -5%" width="160px" />
+            <div style="font-size:10pt;">Zafar Iqbal</div>
+          </div>
+          <div id="header-left" style="margin-right: -250px; margin-top: 10px">
+            <a href="https://youtu.be/r3q2XXeasAA" target="_blank">
+              <video loop data-autoplay src="figures/reverse_splash_loop.mp4" width="200"></video>
+            </a>
+          </div>
+          <h4>when there isn't enough data</h4>
+          <h3 style="margin-top: -20pt;">Train <small>via</small> fMRI time reversal</h3>
+
+          <div class="fragment zoom-in" data-fragment-index="1">
+            <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8); margin-top: -10pt;"
+              width="78%" src="figures/fmri_time_reversal_pre_training.svg" alt="Time reversal">
+          </div>
+          <div class="slide-footer" style="font-size:8pt;">
+            <ol>
+              <li> Zafar Iqbal et al. "Self-supervised pre-training of mental disorder classifiers via time reversal"
+                WIP
+            </ol>
+          </div>
+        </section>
+
+        <section data-state="brightside">
+          <h2>Causal Learning</h2>
+        </section>
+
+        <section>
+          <h3>Multimodal Causal Learning?</h3>
+          <img width="260" class="stretch" src="figures/jointgraph.png" alt="latent">
+          <p><br>
+          <div class='slide-footer' style="text-align: left;">
+            Danks D, Glymour C, Tillman RE. Integrating locally
+            learned causal structures with overlapping
+            variables. NIPS 2009
+          </div>
+        </section>
+
+        <section>
+          <h3>the situation</h3>
+          Causal timescale $\ne$ Measurement timescale
+          <br>
+          <div style="width:800px;margin-left:auto;margin-right:auto;">
+            <div style="float:left; width:200 px"></div>
+            <div style="float:left; width:250 px">
+              <img style="border:0; box-shadow: 0px 0px 0px
+			    rgba(150, 150, 255, 0.8);" width="250" src="figures/neuron.png" alt="neuron">
+              <br>
+              $\approx100ms$
+            </div>
+            <div style="float:left; width:250 px">
+              <img style="border:0; box-shadow: 0px 0px 0px
+			    rgba(150, 150, 255, 0.8);" width="250" src="figures/brainnet.png" alt="brain">
+              <br>
+              $???$
+            </div>
+            <div style="float:left; width:250 px">
+              <img style="border:0; box-shadow: 0px 0px 0px
+			    rgba(150, 150, 255, 0.8);" width="250" src="figures/fmri.png" alt="fmri">
+              <br>
+              $\approx2s$
+            </div>
+
+            <div style="clear:both"></div>
+          </div>
+          <br>
+          What causal inferences can be made in this situation?
+        </section>
+
+        <section>
+          <h3>we approach the task by a: proving theorems</h3>
+          <div class="theorem" style="font-style:italic;text-align:justify">
+            If ${\cal G}^{1} \subseteq {\cal{J}}^1$, then $\forall
+            u [ {\cal G}^{u} \subseteq {\cal{J}}^u]$.
+          </div>
+          <div class="corollary" style="font-style:italic;text-align:justify">
+            If ${\cal G}^{u} \nsubseteq {\cal H}$, then $\forall
+            {\bf E} [ ( {\cal G}^{1}_{\bf E} )^u \nsubseteq {\cal
+            H} ]$
+          </div>
+          <div class="corollary" style="font-style:italic;text-align:justify"> If
+            $\forall u [ {\cal G}^{u} \nsubseteq {\cal H} ]$,
+            then $\forall {\bf E}, u [ ( {\cal G}^{1}_{\bf E}
+            )^u \nsubseteq {\cal H} ]$
+          </div>
+        </section>
+
+        <section data-background="figures/rasl1.png" data-background-transition="zoom" data-background-size="contain">
+          <h3>we approach the task by b: developing algorithms</h3>
+        </section>
+
+        <section data-background="figures/figure5_V5.png" data-background-transition="zoom"
+          data-background-size="contain">
+        </section>
+
+        <section>
+          <div id="header-right" style="margin-right: -100px; margin-top: 50px">
+            <img src="figures/DebSaha.svg" alt="Usman Mahmood"
+              style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 1); margin-bottom: -5%" width="160px">
+            <div style="font-size:10pt;">Debbratha Saha</div>
+          </div>
+          <h3>Gaining insight about populations (w/ privacy)</h3>
+          <img class="stretch" style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 0.8);" width="50%"
+            src="figures/dSNE_outliers.svg" alt="windowed">
+          <div class="slide-footer" style="font-size:8pt;">
+            "Privacy-preserving quality control of neuroimaging datasets in federated environments" Debbrata K.
+            Saha,Vince D. Calhoun,Yuhui Du,Zening Fu,Soo Min Kwon,Anand D. Sarwate,Sandeep R. Panta, Sergey M. Plis,
+            Human Brain Mapping Journal 2022
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Team that's working on this</h2>
+          <img class="stretch" style="border:0; box-shadow: 0px 0px 0px
+					rgba(150, 150, 255, 0.8);" width="800" src="figures/the_team23.svg" alt="loop">
+        </section>
+
+      </section>
+
+
+    </div>
+
+  </div>
+
+  <script src="dist/reveal.js"></script>
+
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/math/math.js"></script>
+  <script src="plugin/chalkboard/plugin.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/fullscreen/fullscreen.js"></script>
+  <script src="plugin/menu/menu.js"></script>
+  <script src="plugin/verticator/plugin/verticator/verticator.js"></script>
+  <link rel="stylesheet" href="plugin/verticator/plugin/verticator/verticator.css">
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+
+    Reveal.initialize({
+      // history: true,
+      hash: true,
+      margin: 0.01,
+      minScale: 0.01,
+      maxScale: 1.23,
+      center: true,
+
+      controls: false,
+      keyboard: true,
+
+      overview: true,
+      transition: 'slide', // Transition style: none/fade/slide/convex/concave/zoom
+      transitionSpeed: 'slow', // Transition speed: default/fast/slow
+      menu: {
+        themes: false,
+        openSlideNumber: true,
+        openButton: false,
+      },
+
+      chalkboard: {
+        boardmarkerWidth: 1,
+        chalkWidth: 2,
+        chalkEffect: 1,
+        toggleNotesButton: false,
+        toggleChalkboardButton: false,
+        slideWidth: Reveal.width,
+        slideHeight: Reveal.height,
+        // src: "chalkboards/chalkboard_em2.json",
+        readOnly: false,
+        theme: "blackboard",
+        eraser: { src: "plugin/chalkboard/img/sponge.png", radius: 30 },
+      },
+
+      math: {
+        mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+        config: 'TeX-AMS_SVG-full',
+        // pass other options into `MathJax.Hub.Config()`
+        TeX: {
+          Macros: {
+            RR: '\\mathbb{R}',
+            PP: '\\mathbb{P}',
+            EE: '\\mathbb{E}',
+            NN: '\\mathbb{N}',
+            vth: '\\vec{\\theta}',
+            loss: '{\\cal l}',
+            hclass: '{\\cal H}',
+            CD: '{\\cal D}',
+            def: '\\stackrel{\\text{def}}{=}',
+            pag: ['\\text{pa}_{{\cal G}^{#1}}(#2)}', 2],
+            vec: ['\\boldsymbol{\\mathbf #1}', 1],
+            set: ['\\left\\{#1 \\; : \\; #2\\right\\}', 2],
+            bm: ['\\boldsymbol{\\mathbf #1}', 1],
+            argmin: ['\\operatorname\{arg\\,min\\,\}'],
+            argmax: ['\\operatorname\{arg\\,max\\,\}'],
+            prob: ["\\mbox{#1$\\left(#2\\right)$}", 2],
+          },
+          loader: { load: ['[tex]/color'] },
+          extensions: ["color.js"],
+          tex: { packages: { '[+]': ['color'] } },
+          svg: {
+            fontCache: 'global'
+          }
+        }
+      },
+
+      plugins: [Verticator, RevealMath, RevealChalkboard, RevealHighlight, RevealNotes, RevealZoom, RevealMenu],
+
+    });
+
+    Reveal.configure({ fragments: true }); // set false when developing to see everything at once
+    Reveal.configure({ slideNumber: true });
+    //Reveal.configure({ history: true });
+    Reveal.configure({ slideNumber: 'c / t' });
+    Reveal.addEventListener('darkside', function () {
+      document.getElementById('theme').setAttribute('href', 'dist/theme/aml_dark.css');
+    }, false);
+    Reveal.addEventListener('brightside', function () {
+      document.getElementById('theme').setAttribute('href', 'dist/theme/aml.css');
+    }, false);
+
+  </script>
+
+  <style type="text/css">
+    /* 1. Style header/footer <div> so they are positioned as desired. */
+    #header-left {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+    }
+
+    #header-right {
+      position: absolute;
+      top: 0%;
+      right: 0%;
+    }
+
+    #footer-left {
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+    }
+  </style>
+
+  <!-- // 2. Create hidden header/footer -->
+  <div id="hidden" style="display:none;">
+    <div id="header">
+      <div id="header-left">
+        <img style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 1);" width="200"
+          src="figures/TReNDS_logo_light.png" alt="TReNDS logo">
+      </div>
+      <div id="header-right">
+        <img style="border:0; box-shadow: 0px 0px 0px rgba(150, 150, 255, 1);" width="150"
+          src="figures/neuroneural.net.svg" alt="neuroneural.net">
+      </div>
+      <div id="footer-left">
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+    // 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+    var header = $('#header').html();
+    if (window.location.search.match(/print-pdf/gi)) {
+      Reveal.addEventListener('ready', function (event) {
+        $('.slide-background').append(header);
+      });
+    }
+    else {
+      $('div.reveal').append(header);
+    }
+  </script>
+
+</body>
+
+</html>
